@@ -33,18 +33,18 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-si
 <p class="lead">I built this for myself when I started looking for my next role in October 2026. It is one place for the whole search: which openings exist, which are worth my time, who I know there, what I have to do today, and what happened next.</p>
 
 <figure>
-<img src="overview.jpg" width="1335" height="775" alt="The CTS jobs view: openings grouped by status and scored, with one opening open beside the list showing how the work splits between code and conversation.">
-<figcaption>The jobs view. All companies and openings in this screenshot are made up: the real data is private.</figcaption>
+<img src="overview.jpg" width="2800" height="1880" alt="The CTS jobs view: openings grouped by status and scored, with one opening open beside the list showing how the work splits between code and conversation.">
+<figcaption>The jobs view, with about two thousand openings in the system. All companies and openings in this screenshot are made up: the real data is private, and of about the same size.</figcaption>
 </figure>
 
 <h2>The problem</h2>
-<p>A job search is several jobs at once. Openings are spread across hundreds of career pages, job boards and Telegram channels, and most of them do not fit. Contacts, follow-ups, events and deadlines live somewhere else. I wanted a single system, with the reasoning behind every suggestion visible.</p>
+<p>A job search is several jobs at once. Openings are spread across hundreds of career pages, job boards, messengers and specialised channels, and most of them do not fit. Contacts, follow-ups, events and deadlines live somewhere else. I wanted a single system, with the reasoning behind every suggestion visible.</p>
 
 <h2>What it does</h2>
 
 <h3>Market monitoring</h3>
 <ul>
-<li>Polls company career pages every hour through 18 connectors (Greenhouse, Ashby, Lever, Workday and others), plus job boards and public Telegram channels.</li>
+<li>Polls company career pages every hour through 18 connectors (Greenhouse, Ashby, Lever, Workday and others), plus many other sources: job boards, messengers and specialised channels.</li>
 <li>Reads job alert emails through the Gmail API, with read-only access.</li>
 <li>Merges the same role from different sources into one card and traces a job board repost back to the employer's own posting when possible.</li>
 <li>Notices when a posting disappears from the employer's site and closes the card.</li>
@@ -104,7 +104,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-si
 <tr><th>Frontend</th><td>Plain JavaScript, HTML and CSS, with no framework or build step</td></tr>
 <tr><th>Scheduling</th><td>macOS launchd: market checks every hour, email every 10 minutes</td></tr>
 <tr><th>AI</th><td>Claude through the Claude Code CLI, with strict JSON schemas and a budget cap on each call</td></tr>
-<tr><th>Integrations</th><td>Public ATS APIs, Gmail API, public Telegram pages</td></tr>
+<tr><th>Integrations</th><td>Public ATS APIs, Gmail API, messenger channels</td></tr>
 <tr><th>PDF</th><td>Headless Chrome</td></tr>
 <tr><th>Remote access</th><td>Tailscale</td></tr>
 <tr><th>Quality</th><td>366 automated tests with <code>unittest</code>, Git</td></tr>
@@ -118,7 +118,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-si
 </div>
 
 <h2>How I built it</h2>
-<p>It took under two weeks, working with AI coding agents, mainly Claude Code. My part was deciding what to build, setting the architecture, checking results against real data and changing the rules when they were wrong. Whenever a score looked off, I recorded the case, found the cause and fixed the rule behind it.</p>
+<p>It was running on day two and took shape within a week, built with AI coding agents, mainly Claude Code. My part was deciding what to build, setting the architecture, checking results against real data and changing the rules when they were wrong. Whenever a score looked off, I recorded the case, found the cause and fixed the rule behind it.</p>
 <p>It runs only on my own computer. It has no other users and the code is private, because it holds my personal data.</p>
 
 <footer>Evgeny Varov · <a href="mailto:evsxez@gmail.com">evsxez@gmail.com</a> · <a href="https://github.com/evsXez">GitHub</a> · Figures as of 9 November 2026</footer>
