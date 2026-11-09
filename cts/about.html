@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CTS: a job search system</title>
+<meta name="description" content="A personal system for running a job search: market monitoring, scoring, applications, networking, events, tasks and a calendar. Built by Evgeny Varov.">
+<style>
+:root{--text:#20232a;--muted:#646b78;--line:#e4e6ea;--accent:#2f5fb3;--bg:#fff;--soft:#f6f7f9}
+@media (prefers-color-scheme:dark){:root{--text:#e8eaee;--muted:#a0a7b3;--line:#333842;--accent:#8db0ef;--bg:#16181d;--soft:#1f2229}}
+*{box-sizing:border-box}
+body{font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);margin:0}
+main{max-width:720px;margin:0 auto;padding:56px 20px 72px}
+h1{font-size:34px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+h2{font-size:23px;margin:48px 0 10px}
+h3{font-size:18px;margin:26px 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:19px;color:var(--muted);margin-bottom:28px}
+figure{margin:32px 0 8px;width:min(1060px,calc(100vw - 40px));position:relative;left:50%;transform:translateX(-50%)}
+img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:720px;margin-left:auto;margin-right:auto}
+ul{margin:0 0 14px;padding-left:20px}li{margin-bottom:6px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 18px}
+.nums div{background:var(--soft);border-radius:8px;padding:14px 16px}
+.nums b{display:block;font-size:24px;line-height:1.2}
+.nums span{font-size:14px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:8px 0 18px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap;width:1%;padding-right:20px}
+a{color:var(--accent)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+@media (max-width:520px){th{white-space:normal;width:32%;padding-right:10px}h1{font-size:30px}}
+</style>
+</head><body><main>
+<h1>CTS: the system behind my job search</h1>
+<p class="lead">I built this for myself when I started looking for my next role in October 2026. It is one place for the whole search: which openings exist, which are worth my time, who I know there, what I have to do today, and what happened next.</p>
+
+<figure>
+<img src="overview.jpg" width="1335" height="775" alt="The CTS jobs view: openings grouped by status and scored, with one opening open beside the list showing how the work splits between code and conversation.">
+<figcaption>The jobs view. All companies and openings in this screenshot are made up: the real data is private.</figcaption>
+</figure>
+
+<h2>The problem</h2>
+<p>A job search is several jobs at once. Openings are spread across hundreds of career pages, job boards and Telegram channels, and most of them do not fit. Contacts, follow-ups, events and deadlines live somewhere else. I wanted a single system, with the reasoning behind every suggestion visible.</p>
+
+<h2>What it does</h2>
+
+<h3>Market monitoring</h3>
+<ul>
+<li>Polls company career pages every hour through 18 connectors (Greenhouse, Ashby, Lever, Workday and others), plus job boards and public Telegram channels.</li>
+<li>Reads job alert emails through the Gmail API, with read-only access.</li>
+<li>Merges the same role from different sources into one card and traces a job board repost back to the employer's own posting when possible.</li>
+<li>Notices when a posting disappears from the employer's site and closes the card.</li>
+</ul>
+
+<h3>Scoring and triage</h3>
+<ul>
+<li>A rules engine tags each opening by role, location, pay, stack and company type, applies hard filters, and shows why it got its score.</li>
+<li>An LLM fills in only the fields that rules could not settle.</li>
+<li>A breakdown estimates from the posting how much of the role is hands-on code and how much is conversation, and with whom.</li>
+<li>Decisions take one click: pick, defer with a reminder, or skip with a reason.</li>
+</ul>
+
+<h3>Applications</h3>
+<ul>
+<li>A CV builder assembles each CV from a library of approved blocks, checks it with a linter and renders a text-based PDF.</li>
+<li>An answer bank keeps consistent replies to common application questions.</li>
+<li>A funnel from new opening to offer, with a timeline for each job, time in each stage and days to first reply.</li>
+<li>Sending an application schedules its follow-up automatically, and long silence is flagged.</li>
+</ul>
+
+<h3>Networking</h3>
+<ul>
+<li>People are a funnel of their own, from first contact to someone who would refer me.</li>
+<li>Every touch is logged by channel and purpose, and people are linked to companies and openings.</li>
+<li>Each contact has a next step with a date, which becomes a task in the plan.</li>
+</ul>
+
+<h3>Companies</h3>
+<ul>
+<li>A registry of the companies I watch, each with its open roles, people, history and hiring activity over time.</li>
+</ul>
+
+<h3>Events</h3>
+<ul>
+<li>An offline tab lists meetups and conferences by week, from idea to registered to attended.</li>
+<li>Each event has a usefulness rating, price, registration link and deadline, and notes on who I met.</li>
+</ul>
+
+<h3>Tasks and calendar</h3>
+<ul>
+<li>A task tracker with numbered tasks, tracks, deadlines and checkpoints.</li>
+<li>A calendar of tasks and events, a view of what is due today or overdue, and daily habits with streaks.</li>
+<li>Follow-ups, next steps and interviews from the rest of the system land here on their own.</li>
+</ul>
+
+<h3>Everyday use</h3>
+<ul>
+<li>The interface works in English and Russian.</li>
+<li>Available from my iPad over a private network, with no public address.</li>
+</ul>
+
+<h2>Technology</h2>
+<table>
+<tr><th>Backend</th><td>Python 3 standard library only: <code>ThreadingHTTPServer</code> and a JSON API</td></tr>
+<tr><th>Data</th><td>SQLite in WAL mode, with append-only logs and daily backups</td></tr>
+<tr><th>Frontend</th><td>Plain JavaScript, HTML and CSS, with no framework or build step</td></tr>
+<tr><th>Scheduling</th><td>macOS launchd: market checks every hour, email every 10 minutes</td></tr>
+<tr><th>AI</th><td>Claude through the Claude Code CLI, with strict JSON schemas and a budget cap on each call</td></tr>
+<tr><th>Integrations</th><td>Public ATS APIs, Gmail API, public Telegram pages</td></tr>
+<tr><th>PDF</th><td>Headless Chrome</td></tr>
+<tr><th>Remote access</th><td>Tailscale</td></tr>
+<tr><th>Quality</th><td>366 automated tests with <code>unittest</code>, Git</td></tr>
+</table>
+
+<div class="nums">
+<div><b>525</b><span>companies watched</span></div>
+<div><b>18,950</b><span>postings processed</span></div>
+<div><b>~23,000</b><span>lines of code</span></div>
+<div><b>0</b><span>Python dependencies</span></div>
+</div>
+
+<h2>How I built it</h2>
+<p>It took under two weeks, working with AI coding agents, mainly Claude Code. My part was deciding what to build, setting the architecture, checking results against real data and changing the rules when they were wrong. Whenever a score looked off, I recorded the case, found the cause and fixed the rule behind it.</p>
+<p>It runs only on my own computer. It has no other users and the code is private, because it holds my personal data.</p>
+
+<footer>Evgeny Varov · <a href="mailto:evsxez@gmail.com">evsxez@gmail.com</a> · <a href="https://github.com/evsXez">GitHub</a> · Figures as of 9 November 2026</footer>
+</main></body></html>
