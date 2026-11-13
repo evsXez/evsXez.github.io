@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An A/B test on my own CV</title>
+<meta name="description" content="Half of my applications get a CV adapted to the posting, half get the standard one. A coin decides.">
+<meta property="og:title" content="An A/B test on my own CV">
+<meta property="og:description" content="Half of my applications get a CV adapted to the posting, half get the standard one. A coin decides.">
+<meta property="og:url" content="https://evsxez.github.io/cts/journal/2026-11-08-ab-test-cv.html">
+<meta property="og:image" content="https://evsxez.github.io/cts/img/2026-11-13_jobs.jpg">
+<link rel="alternate" type="application/rss+xml" title="CTS journal" href="/cts/journal/feed.xml">
+<style>
+:root{--text:#20232a;--muted:#646b78;--line:#e4e6ea;--accent:#2f5fb3;--bg:#fff;--soft:#f6f7f9;--tag:#eef2fa}
+@media (prefers-color-scheme:dark){:root{--text:#e8eaee;--muted:#a0a7b3;--line:#333842;--accent:#8db0ef;--bg:#16181d;--soft:#1f2229;--tag:#232a38}}
+*{box-sizing:border-box}
+body{font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);margin:0}
+main{max-width:720px;margin:0 auto;padding:28px 20px 72px}
+nav.top{max-width:720px;margin:0 auto;padding:22px 20px 0;display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+nav.top a{color:var(--muted);text-decoration:none}nav.top a:hover,nav.top a.on{color:var(--text)}
+nav.top .home{font-weight:600;color:var(--text);margin-right:auto}
+h1{font-size:34px;line-height:1.2;margin:24px 0 12px;letter-spacing:-.01em}
+h2{font-size:23px;margin:44px 0 10px}
+h3{font-size:18px;margin:26px 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:19px;color:var(--muted);margin-bottom:28px}
+.meta{font-size:14px;color:var(--muted);margin:-4px 0 26px}
+figure{margin:28px 0 10px;width:min(1060px,calc(100vw - 40px));position:relative;left:50%;transform:translateX(-50%)}
+figure a{display:block}
+img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:720px;margin-left:auto;margin-right:auto}
+ul,ol{margin:0 0 14px;padding-left:22px}li{margin-bottom:6px}
+blockquote{margin:18px 0;padding:4px 0 4px 16px;border-left:3px solid var(--accent);color:var(--muted)}
+code{font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--soft);padding:1px 5px;border-radius:4px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.nums div{background:var(--soft);border-radius:8px;padding:14px 16px}
+.nums b{display:block;font-size:24px;line-height:1.2}
+.nums span{font-size:14px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:8px 0 18px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap;width:1%;padding-right:20px}
+a{color:var(--accent)}
+.entries{list-style:none;padding:0;margin:8px 0 0}
+.entries li{padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+.entries .d{font-size:14px;color:var(--muted)}
+.entries a{font-size:19px;font-weight:600;text-decoration:none}
+.entries p{margin:4px 0 0;color:var(--muted)}
+.steps{list-style:none;padding:0;margin:26px 0 34px;position:relative}
+.steps li{position:relative;padding:0 0 18px 34px;margin:0}
+.steps li:before{content:"";position:absolute;left:8px;top:22px;bottom:-2px;width:2px;background:var(--line)}
+.steps li:last-child:before{display:none}
+.steps li.done:before{background:var(--accent)}
+.steps .dot{position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);background:var(--bg);box-sizing:border-box}
+.steps .done .dot{background:var(--accent);border-color:var(--accent)}
+.steps .now .dot{border-color:var(--accent);box-shadow:0 0 0 4px var(--tag)}
+.steps .now .dot:after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent)}
+.steps b{display:block;font-weight:600}
+.steps .next b{color:var(--muted);font-weight:500}
+.steps span{display:block;font-size:14px;color:var(--muted)}
+.steps .now span{color:var(--accent)}
+.steps a{color:inherit;text-decoration:none}.steps a:hover b{text-decoration:underline}
+.hitl{background:var(--tag);border-radius:8px;padding:14px 16px;margin:20px 0}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:40px;font-size:15px}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+@media (max-width:520px){th{white-space:normal;width:32%;padding-right:10px}h1{font-size:30px}}
+</style>
+</head><body>
+<nav class="top"><a class="home" href="/cts/journal/">CTS</a><a href="/cts/journal/" class=on>Journal</a><a href="/cts/about.html">What CTS is</a><a href="/cts/principles.html">Principles</a></nav>
+<main>
+<h1>An A/B test on my own CV</h1>
+<p class="meta">8 November 2026 · written on 13 November 2026, looking back</p>
+<p>Everyone says you should tailor your CV to each posting. Nobody I read had numbers. So since 8 November it is an experiment.</p>
+<p>When I press &quot;Prepare&quot; on a job card, CTS flips a coin. Group A gets my standard CV for that kind of role. Group B gets a CV adapted to the wording of the posting: the role name in the first sentence of the summary, the posting&#x27;s terms in the bullets and skills where I have real experience behind them.</p>
+<p>Guard rails, enforced in code:</p>
+<ul><li>a term from the posting is used only if my approved experience backs it;</li><li>no more than a few words in a row copied from the posting;</li><li>the title may change only the generic word (Mobile, Software, Product), never the level;</li><li>group B never falls back to the standard CV, otherwise the comparison breaks.</li></ul>
+<p>The metric is simple: replies and screens per application in each group. It needs more applications before it says anything. I will post the result here either way.</p>
+<div class="pager"><span>← <a href="2026-11-06-people-before-postings.html">People before postings</a></span><span><a href="2026-11-09-human-in-the-loop.html">Agents fill the form, I press Submit</a> →</span></div>
+<footer>Evgeny Varov · <a href="mailto:evsxez@gmail.com">evsxez@gmail.com</a> · <a href="https://github.com/evsXez">GitHub</a></footer>
+</main></body></html>

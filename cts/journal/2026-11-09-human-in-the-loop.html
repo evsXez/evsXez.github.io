@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agents fill the form, I press Submit</title>
+<meta name="description" content="An agent fills the application form in a browser tab and stops. Human in the loop, by design.">
+<meta property="og:title" content="Agents fill the form, I press Submit">
+<meta property="og:description" content="An agent fills the application form in a browser tab and stops. Human in the loop, by design.">
+<meta property="og:url" content="https://evsxez.github.io/cts/journal/2026-11-09-human-in-the-loop.html">
+<meta property="og:image" content="https://evsxez.github.io/cts/img/2026-11-13_jobs.jpg">
+<link rel="alternate" type="application/rss+xml" title="CTS journal" href="/cts/journal/feed.xml">
+<style>
+:root{--text:#20232a;--muted:#646b78;--line:#e4e6ea;--accent:#2f5fb3;--bg:#fff;--soft:#f6f7f9;--tag:#eef2fa}
+@media (prefers-color-scheme:dark){:root{--text:#e8eaee;--muted:#a0a7b3;--line:#333842;--accent:#8db0ef;--bg:#16181d;--soft:#1f2229;--tag:#232a38}}
+*{box-sizing:border-box}
+body{font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);margin:0}
+main{max-width:720px;margin:0 auto;padding:28px 20px 72px}
+nav.top{max-width:720px;margin:0 auto;padding:22px 20px 0;display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+nav.top a{color:var(--muted);text-decoration:none}nav.top a:hover,nav.top a.on{color:var(--text)}
+nav.top .home{font-weight:600;color:var(--text);margin-right:auto}
+h1{font-size:34px;line-height:1.2;margin:24px 0 12px;letter-spacing:-.01em}
+h2{font-size:23px;margin:44px 0 10px}
+h3{font-size:18px;margin:26px 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:19px;color:var(--muted);margin-bottom:28px}
+.meta{font-size:14px;color:var(--muted);margin:-4px 0 26px}
+figure{margin:28px 0 10px;width:min(1060px,calc(100vw - 40px));position:relative;left:50%;transform:translateX(-50%)}
+figure a{display:block}
+img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:720px;margin-left:auto;margin-right:auto}
+ul,ol{margin:0 0 14px;padding-left:22px}li{margin-bottom:6px}
+blockquote{margin:18px 0;padding:4px 0 4px 16px;border-left:3px solid var(--accent);color:var(--muted)}
+code{font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--soft);padding:1px 5px;border-radius:4px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.nums div{background:var(--soft);border-radius:8px;padding:14px 16px}
+.nums b{display:block;font-size:24px;line-height:1.2}
+.nums span{font-size:14px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:8px 0 18px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap;width:1%;padding-right:20px}
+a{color:var(--accent)}
+.entries{list-style:none;padding:0;margin:8px 0 0}
+.entries li{padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+.entries .d{font-size:14px;color:var(--muted)}
+.entries a{font-size:19px;font-weight:600;text-decoration:none}
+.entries p{margin:4px 0 0;color:var(--muted)}
+.steps{list-style:none;padding:0;margin:26px 0 34px;position:relative}
+.steps li{position:relative;padding:0 0 18px 34px;margin:0}
+.steps li:before{content:"";position:absolute;left:8px;top:22px;bottom:-2px;width:2px;background:var(--line)}
+.steps li:last-child:before{display:none}
+.steps li.done:before{background:var(--accent)}
+.steps .dot{position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);background:var(--bg);box-sizing:border-box}
+.steps .done .dot{background:var(--accent);border-color:var(--accent)}
+.steps .now .dot{border-color:var(--accent);box-shadow:0 0 0 4px var(--tag)}
+.steps .now .dot:after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent)}
+.steps b{display:block;font-weight:600}
+.steps .next b{color:var(--muted);font-weight:500}
+.steps span{display:block;font-size:14px;color:var(--muted)}
+.steps .now span{color:var(--accent)}
+.steps a{color:inherit;text-decoration:none}.steps a:hover b{text-decoration:underline}
+.hitl{background:var(--tag);border-radius:8px;padding:14px 16px;margin:20px 0}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:40px;font-size:15px}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+@media (max-width:520px){th{white-space:normal;width:32%;padding-right:10px}h1{font-size:30px}}
+</style>
+</head><body>
+<nav class="top"><a class="home" href="/cts/journal/">CTS</a><a href="/cts/journal/" class=on>Journal</a><a href="/cts/about.html">What CTS is</a><a href="/cts/principles.html">Principles</a></nav>
+<main>
+<h1>Agents fill the form, I press Submit</h1>
+<p class="meta">9 November 2026 · written on 13 November 2026, looking back</p>
+<p>Application forms were the slowest part: the same name, links, work permit and salary questions, a CV upload, a few free-text answers. On 9 November I gave this to an agent.</p>
+<p>When I decide to apply, CTS builds the CV and starts a Claude agent in a Chrome tab. It opens the form on the company&#x27;s own site, fills the fields from my answer bank, uploads the CV and writes the free-text answers. Then it stops. The tab waits for me. I read everything, ask for changes if needed, and press Submit myself.</p>
+<p>This is human in the loop, and it is deliberate. A bot that applies everywhere would be faster. It would also send things I never read to companies I care about. Here the machine does the typing and I make every decision that leaves my computer.</p>
+<p>A run costs about twenty cents. When a job comes from an aggregator, the agent first looks for the original posting on the company&#x27;s site, and code checks that it found the right one.</p>
+<div class="pager"><span>← <a href="2026-11-08-ab-test-cv.html">An A/B test on my own CV</a></span><span><a href="2026-11-11-no-linkedin-automation.html">What I will not automate</a> →</span></div>
+<footer>Evgeny Varov · <a href="mailto:evsxez@gmail.com">evsxez@gmail.com</a> · <a href="https://github.com/evsXez">GitHub</a></footer>
+</main></body></html>
